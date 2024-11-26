@@ -1,0 +1,136 @@
+.signup-main-container {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  align-items: center;
+  flex-direction: column;
+  margin: 5% 5%;
+}
+
+#go-to-home {
+  position: fixed;
+  top: 5%;
+  left: 5%;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+#go-to-home a {
+  text-decoration: none;
+}
+
+#go-to-home a:hover{
+  text-decoration: underline;
+  text-decoration-color: red;
+  transition: all 2s ease;
+}
+
+.signup-logo-text {
+  font-size: 64px;
+  color: #037e89;
+  font-weight: bold;
+}
+
+.larger-form-para {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.smaller-form-para {
+    font-size: 16px;
+    color: #626262;
+    margin: 2% 0;
+}
+
+.main-form-container {
+  width: 40%;
+  border-radius: 8px;
+  padding: 2%;
+  margin: 2%;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.main-form-container fieldset {
+  margin: 2%;
+}
+
+.main-form-container form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.gender-select,
+.name-container,
+.email-container,
+.password-container,
+.date-select {
+  width: 100%;
+}
+
+.name-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.name-container #fname,
+#lname {
+  width: 45%;
+  margin: 2%;
+  padding: 2%;
+  font-size: 16px;
+}
+
+.gender-select {
+  display: flex;
+  gap: 2%;
+  padding: 2%;
+}
+
+.date-select,
+.gender-select {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.date-select {
+    padding: 0 2%;
+}
+
+#email,
+#password,
+#date {
+  padding: 2%;
+  font-size: 16px;
+  margin: 2%;
+  width: 96%;
+}
+
+#gender-text,
+#date-text {
+    color: #626262;
+}
+
+.signUp-button {
+  margin: 2%;
+  font-size: 18px;
+}
+
+.signUp-button {
+  border: none;
+  background-color: #037e89;
+  color: white;
+  font-weight: bold;
+  padding: 2%;
+  text-align: center;
+  width: 50%;
+  border-radius: 4px;
+}
+
+.signUp-button:hover {
+border-radius: 24px;
+background-color: black;
+transition: background 0.3s ease-in-out;
+transform: scale(1.1);
+}

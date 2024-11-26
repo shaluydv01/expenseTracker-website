@@ -1,0 +1,241 @@
+.about-main-container {
+  background-color: #0333;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  padding-top: 8rem;
+}
+.about-mission-container {
+  display: flex;
+  margin: 2% 5%;
+}
+
+.about-text-container {
+  align-content: center;
+}
+
+.about-text-container h2 {
+  text-align: center;
+  font-size: 32px;
+  color: #037e89;
+  margin-bottom: 20px;
+}
+.about-text-container .about-para {
+  font-size: 20px;
+  font-weight: 500;
+  text-align: center;
+  padding-right: 20px;
+}
+
+.top-header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.about-header {
+  padding: 1.3rem;
+  background-color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  font-weight: 600;
+  font-size: 30px;
+}
+
+/* #go-to-home {
+  font-size: 24px;
+} */
+
+.about-container-image {
+  width: 400px;
+  height: 300px;
+  border-radius: 15px;
+  border: 1.5px solid black;
+}
+
+.about-container-image:hover {
+  border: 1px solid maroon;
+}
+
+/* features */
+.main-features {
+  margin: 10px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+.feature-container h1 {
+  text-align: center;
+  font-size: 35px;
+  color: #037e89;
+}
+.card-feature1 {
+  /* border: 2px solid #037e89; */
+  border-radius: 8px;
+  width: 20%;
+  background-color: #fff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.card-feature1:hover {
+  transform: scale(1.1);
+  border: 1px solid red;
+}
+
+.card-feature1 p {
+  padding: 10px;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 500;
+}
+/* target-audience */
+.about-target-container {
+  width: 84%;
+  margin: 30px auto;
+  padding: 25px 15px;
+  font-size: 28px;
+  font-weight: 600;
+  text-align: center;
+  /* border: 2px solid #037E89; */
+  border-radius: 15px;
+  /* background: linear-gradient(to right, rgb(130, 122, 241) 10%, rgb(240, 190, 96) ); */
+  background: linear-gradient(90deg, rgb(130, 122, 241) 10%, rgb(240, 190, 96));
+  background-size: 400% 400%;
+  animation: gradient 10s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.about-target-container .inspired {
+  font-size: 16px;
+  color: #333;
+  font-weight: 400;
+  margin-top: 20px;
+}
+
+/*------------------ team section---------------------- */
+
+.team-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  margin-top: 5%;
+  padding-bottom: 4%;
+}
+
+.team-section img {
+  width: 100px;
+  border-radius: 50%;
+}
+
+.team-section img:hover {
+  border: 2px solid red;
+}
+
+#creators-header {
+  text-decoration: underline;
+}
+
+#creators-header:hover {
+  color: black;
+  transform: scale(1.1);
+}
+
+/*----------------Responsiveness----------------------*/
+
+@media (max-width: 412px) {
+  .about-header {
+    background-color: #037E89;
+    color: #fff;
+  }
+
+  .about-mission-container {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .about-main-container {
+    padding-bottom: 32px;
+    padding-top: 7rem;
+  }
+
+  .ready-slide p {
+    padding: 0 1rem;
+  }
+
+  .about-text-container h2 {
+    font-size: 26px;
+  }
+
+  .about-text-container .about-para {
+    font-size: 16px;
+    font-weight: 500;
+    text-align: justify;
+    padding-right: 0;
+  }
+
+  .about-container-image {
+    width: 300px;
+    height: 200px;
+  }
+
+  .feature-container h1 {
+    font-size: 26px;
+  }
+
+  .main-features {
+    flex-direction: column;
+    margin: 0 8px 8px;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .card-feature1 {
+    margin-top: 16px;
+    width: 90%;
+    border: 2px solid #626262;
+  }
+
+  .card-feature1 img {
+    width: 100%;
+  }
+
+  #creators-header {
+    margin: 0 8px;
+    font-size: 22px;
+  }
+
+  .team-section {
+    gap: 10px;
+    padding-bottom: 10%;
+  }
+
+  .team-section img {
+    width: 64px;
+    border-radius: 50%;
+  }
+
+  .member-img p {
+    font-size: 10px;
+  }
+
+  #last-para {
+    font-weight: 700;
+    text-decoration: underline;
+  }
+}

@@ -1,0 +1,152 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    transition: background 0.4s ease, color 0.4s ease;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5rem;
+    /* 1a1f31 */
+
+    background-color: #037E89;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+}
+
+.navbar-logo{
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 32px;
+}
+
+.navbar-links{
+    display: flex;
+    list-style: none;
+    transition: transform 0.3s ease-in-out;
+    margin-right: 2rem;
+}
+
+.navbar-links li {
+    margin: 0 1rem;
+    position: relative;
+}
+
+.navbar-links li a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem;
+    display: inline-block;
+    position: relative;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.navbar-links li a::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 3px;
+    background: red;
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+.navbar-links li a:hover::after{
+    width: 100%;
+    left: 0;
+}
+
+.navbar-links li a:hover{
+    transform: scale(1.1);
+}
+
+.menu-icon{
+    font-size: 1.8rem;
+    color: black;
+    cursor: pointer;
+    display: none;
+    background: transparent;
+    border: none;
+}
+
+.close-drawer{
+    font-size: 1.5rem;
+    color: red;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    position: absolute;
+    top: 20px;
+    left: 10px;
+    display: none;
+}
+
+.close-drawer:hover{
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .navbar-links{
+        margin: 0;
+    }
+
+    .navbar-links li a{
+        color: white;
+    }
+
+    .close-drawer{
+        display: block;
+    }
+
+    .navbar-links{
+        position: fixed;
+        top: 0;
+        height: 100vh;
+        right: 0;
+        width: 60%;
+        background: radial-gradient(circle at top left, #2b2d42, #1c1e2b);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transform: translateX(100%);
+        z-index: 999;
+        transition: transform 0.3s ease, opacity 0.4s ease;
+        opacity: 0;
+    }
+
+    .navbar-links.active{
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    .menu-icon{
+        display: block;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .navbar{
+        padding: 1rem 3rem;
+    }
+}
+
+@media (max-width: 365px) {
+    .navbar{
+        padding: 1rem;
+    }
+
+    .navbar-logo{
+        font-size: 26px;
+    }
+}

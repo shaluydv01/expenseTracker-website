@@ -1,0 +1,254 @@
+.login-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 95vh;
+    gap: 10rem;
+    margin: 1rem 5rem;
+}
+
+.login-page-text{
+    width: 50%;
+}
+
+.larger-text{
+    color: #037E89;
+    font-weight: bold;
+    font-size: 64px;
+}
+
+.smaller-text{
+    font-size: 32px;
+}
+
+.form-content-container{
+    padding: 40px 32px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    width: 40%;
+}
+
+.form-container{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+}
+
+.frm-text{
+    font-size: 20px;
+}
+
+.input-login{
+    font-size: 16px;
+    color: #626262;
+    width: 100%;
+    border: 0.5px solid #333;
+    border-radius: 4px;
+    padding: 8px 16px;
+}
+
+.btn{
+    font-size: 20px;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 16px;
+    font-weight: bold;
+    color: white;
+}
+
+.login-btn{
+    background-color: #037E89;
+    width: 100%;
+}
+
+.login-btn:hover{
+    cursor: pointer;
+    text-decoration: underline;
+    color: #037E89;
+    background-color: black;
+    transition: background-color 1s ease, color 1s ease;
+}
+
+.create-btn{
+    background-color: green;
+    width: 75%;
+}
+
+.create-btn a{
+    color: white;
+    text-decoration: none;
+}
+
+.create-btn:hover{
+    cursor: pointer;
+    text-decoration: underline;
+    color: red;
+    background-color: black;
+    transition: background-color 1s ease, color 1s ease;
+}
+
+/*----------------------------Go to Home---------------*/
+
+#go-to-home {
+    position: fixed;
+    top: 5%;
+    left: 5%;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  #go-to-home a {
+    text-decoration: none;
+  }
+  
+  #go-to-home a:hover{
+    text-decoration: underline;
+    text-decoration-color: red;
+    transition: all 2s ease;
+  }
+
+
+/*--------------------------Responsiveness----------------*/
+
+@media (max-width: 960px) {
+    .login-container{
+        gap: 5rem;
+    }
+
+    .larger-text{
+        font-size: 56px;
+    }
+
+    .smaller-text{
+        font-size: 21px;
+    }
+
+    .create-btn{
+        font-size: 18px;
+    }
+
+    .form-content-container{
+        width: 50%;
+    }
+}
+
+@media (max-width: 860px) {
+    .login-container{
+        gap: 3rem;
+    }
+
+    .create-btn{
+        font-size: 16px;
+    }
+
+    .smaller-text{
+        font-size: 20px;
+    }
+
+    .frm-text{
+        font-size: 16px;
+    }
+
+    .form-content-container{
+        width: 50%;
+    }
+}
+
+@media (max-width: 860px) {
+    .login-container{
+        gap: 1rem;
+    }
+
+    .larger-text{
+        font-size: 48px;
+    }
+
+    .smaller-text{
+        font-size: 20px;
+    }
+
+    .create-btn{
+        font-size: 16px;
+    }
+
+    .frm-text{
+        font-size: 16px;
+    }
+
+    .form-content-container{
+        width: 50%;
+    }
+}
+
+@media (max-width: 860px) {
+    .login-container{
+        margin: 2rem 1.5rem;
+    }
+
+    .form-content-container{
+        width: 50%;
+    }
+}
+
+@media (max-width: 600px) {
+    .login-container{
+        margin: 1rem 1.5rem;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .login-page-text{
+        width: 50%;
+    }
+
+    .larger-text{
+        font-size: 32px;
+    }
+
+    .smaller-text{
+        font-size: 16px;
+    }
+
+    .form-content-container{
+        width: 75%;
+        
+    }
+}
+
+@media (max-width: 480px) {
+
+    .login-container{
+        width: 90%;
+        margin: 1rem 1rem;
+    }
+
+    .login-page-text{
+        width: 70%;
+    }
+
+    .form-content-container{
+        padding: 16px 16px;
+        width: 90%;
+    }
+}
+
+
+@media (max-width: 365px) {
+
+    .login-container{
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .login-page-text{
+        width: 75%;
+    }
+
+    .form-content-container{
+        padding: 16px 16px;
+        width: 85%;
+    }
+}
+
+

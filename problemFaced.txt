@@ -1,0 +1,386 @@
+1.My code Problem: 
+
+correct this code i want to add amount1 and amount2 to reflect but it is concatinating it as a string  import { useState } from "react";
+import "./UserForm.css";
+
+const UserForm = ({ item, setItem }) => {
+  const [fill1, setFill1] = useState("");
+  const [amount1, setAmount1] = useState();
+  const [fill2, setFill2] = useState("");
+  const [amount2, setAmount2] = useState();
+  // const [totalAmount, setTotalAmount] = useState();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const obj = {
+      id: Math.random(),
+      fill1: fill1,
+      amount1: amount1,
+      fill2: fill2,
+      amount2: amount2,
+    };
+
+    setItem([...item, obj]);
+
+    // console.log(fill1);
+    // console.log(amount1);
+    // console.log(fill2);
+    // console.log(amount2);
+    // console.log(rupees);
+  };
+
+
+  return (
+    <>
+      {/* ------------------Main Container--------------- */}
+      <div className="main-userForm-container">
+        {/* ----------------------Left Container--------------- */}
+        <div className="userForm-content-container-1">
+          {/* ---------------------------Form Container----------------- */}
+          <form onSubmit={handleSubmit}>
+            {/* ---------------------Date Input----------------- */}
+            <div className="ucc-1 box-1">Date</div>
+
+            {/* ----------------------Item-1 Container--------------- */}
+            <div className="ucc-1 box-2">
+              <div className="item-box-input">
+                <legend>Item 1</legend>
+                <input
+                  value={fill1}
+                  type="text"
+                  name="data1"
+                  id="item1"
+                  placeholder="Fill data"
+                  onChange={(e) => setFill1(e.target.value)}
+                  required
+                />
+              </div>
+
+              <div className="item-box-input">
+                <legend>Amount Spend</legend>
+                <input
+                  value={amount1}
+                  type="number"
+                  name="amount1"
+                  id="amount1"
+                  placeholder="Amount in Rs."
+                  onChange={(e) => setAmount1(e.target.value)}
+                  required
+                />
+              </div>
+            </div>
+
+            {/* --------------------Item-2 Container------------- */}
+            <div className="ucc-1 box-3">
+              <div className="item-box-input">
+                <legend>Item 2</legend>
+                <input
+                  value={fill2}
+                  type="text"
+                  name="data2"
+                  id="item2"
+                  placeholder="Fill data"
+                  onChange={(e) => setFill2(e.target.value)}
+                />
+              </div>
+              <div className="item-box-input">
+                <legend>Amount Spend</legend>
+                <input
+                  value={amount2}
+                  type="number"
+                  name="amount2"
+                  id="amount2"
+                  placeholder="Amount in Rs."
+                  onChange={(e) => setAmount2(e.target.value)}
+                />
+              </div>
+            </div>
+
+            {/* -----------------Total Amount Container---------------- */}
+            <div className="ucc-1 box-4">
+              <div className="item-box-input">
+                <p id="total-legend">Total amount spend in Rs.</p>
+              </div>
+              <div className="item-box-input">
+                <p id="total-legend">Rs.{(() => amount1 + amount2)}</p>
+              </div>
+            </div>
+
+            {/* --------------------------Button Container------------------- */}
+            <div className="ucc-1 box-5">
+              <button className="btnn btn-add-more">Add More</button>
+              <button className="btnn btn-done">Done</button>
+            </div>
+          </form>
+        </div>
+
+        {/* ---------------------------Right Container----------- */}
+        {/* ---------------------------------------------------------- */}
+        <div className="userForm-content-container-2">
+          <table className="userForm-right-table">
+            <thead className="urt-head">
+              <tr className="uth-row">
+                <th>Month</th>
+                <th>Total</th>
+              </tr>
+            </thead>
+            <tbody className="urt-body">
+              <tr className="utb-row">
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default UserForm;
+
+My Code Solution: 
+
+The issue you're encountering arises from the fact that the amount1 and amount2 are being treated as strings when you're attempting to add them together. In JavaScript, when you use the + operator with strings, it performs string concatenation instead of numerical addition.
+To fix this, you need to ensure that both amount1 and amount2 are treated as numbers. Since you're using type="number" for the input fields, their values will still be treated as strings by default, so you need to convert them into numbers before performing the addition.
+You can do this by using parseFloat() or Number() to convert the values to numbers before performing the addition. Here's how you can modify your code to reflect this change:
+
+Updated Code:
+
+import { useState } from "react";
+import "./UserForm.css";
+
+const UserForm = ({ item, setItem }) => {
+  const [fill1, setFill1] = useState("");
+  const [amount1, setAmount1] = useState(""); // Store as string initially
+  const [fill2, setFill2] = useState("");
+  const [amount2, setAmount2] = useState(""); // Store as string initially
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const obj = {
+      id: Math.random(),
+      fill1: fill1,
+      amount1: amount1,
+      fill2: fill2,
+      amount2: amount2,
+    };
+
+    setItem([...item, obj]);
+  };
+
+  // Parse amounts as numbers
+  const totalAmount = (parseFloat(amount1) || 0) + (parseFloat(amount2) || 0);
+
+  return (
+    <>
+      <div className="main-userForm-container">
+        <div className="userForm-content-container-1">
+          <form onSubmit={handleSubmit}>
+            <div className="ucc-1 box-1">Date</div>
+
+            <div className="ucc-1 box-2">
+              <div className="item-box-input">
+                <legend>Item 1</legend>
+                <input
+                  value={fill1}
+                  type="text"
+                  name="data1"
+                  id="item1"
+                  placeholder="Fill data"
+                  onChange={(e) => setFill1(e.target.value)}
+                  required
+                />
+              </div>
+
+              <div className="item-box-input">
+                <legend>Amount Spend</legend>
+                <input
+                  value={amount1}
+                  type="number"
+                  name="amount1"
+                  id="amount1"
+                  placeholder="Amount in Rs."
+                  onChange={(e) => setAmount1(e.target.value)}
+                  required
+                />
+              </div>
+            </div>
+
+            <div className="ucc-1 box-3">
+              <div className="item-box-input">
+                <legend>Item 2</legend>
+                <input
+                  value={fill2}
+                  type="text"
+                  name="data2"
+                  id="item2"
+                  placeholder="Fill data"
+                  onChange={(e) => setFill2(e.target.value)}
+                />
+              </div>
+              <div className="item-box-input">
+                <legend>Amount Spend</legend>
+                <input
+                  value={amount2}
+                  type="number"
+                  name="amount2"
+                  id="amount2"
+                  placeholder="Amount in Rs."
+                  onChange={(e) => setAmount2(e.target.value)}
+                />
+              </div>
+            </div>
+
+            <div className="ucc-1 box-4">
+              <div className="item-box-input">
+                <p id="total-legend">Total amount spend in Rs.</p>
+              </div>
+              <div className="item-box-input">
+                <p id="total-legend">Rs.{totalAmount}</p>
+              </div>
+            </div>
+
+            <div className="ucc-1 box-5">
+              <button className="btnn btn-add-more">Add More</button>
+              <button className="btnn btn-done">Done</button>
+            </div>
+          </form>
+        </div>
+
+        <div className="userForm-content-container-2">
+          <table className="userForm-right-table">
+            <thead className="urt-head">
+              <tr className="uth-row">
+                <th>Month</th>
+                <th>Total</th>
+              </tr>
+            </thead>
+            <tbody className="urt-body">
+              <tr className="utb-row">
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default UserForm;
+
+Key Changes:
+State Initialization for Amounts: The initial state of amount1 and amount2 is set to an empty string "" to represent empty input values. This is important because the input type is number, and if you directly set them as numbers (e.g., 0), the input fields might not behave as expected.
+
+Total Calculation: When calculating the total amount, parseFloat() is used to convert the input values into numbers. If the value is empty or invalid (like an empty string), parseFloat() will return NaN, so we use the logical OR operator (|| 0) to default it to 0.
+
+Rendering the Total Amount: The total amount is calculated dynamically with totalAmount and displayed in the form.
+
+
+-----------------------------------------Second Problem--------------------------------------
+2.My Code Problem Was: 
+
+correct it also , it is reflecting as a string import React from "react";
+import "./Record.css";
+
+const Record = ({ item }) => {
+  return (
+    <>
+      <div className="Record-container">
+        <table className="record-table">
+          {item.map((d) => {
+            return (
+              <>
+                <thead className="record-table-head">
+                  <tr>
+                    <th>{d.itemHeading}</th>
+                  </tr>
+                  <tr>
+                    <th>{d.amountHeading}</th>
+                  </tr>
+                </thead>
+                <tbody key={d.id} className="record-table-body">
+                  <tr>
+                    <td>{d.fill1}</td>
+                    <td>{d.amount1}</td>
+                  </tr>
+                  <tr>
+                    <td>{d.fill2}</td>
+                    <td>{d.amount2}</td>
+                  </tr>
+                  <tr>
+                    <td>Total</td>
+                    {/* <td>{d.Rs}</td> */}
+                    <td>{d.amount1 + d.amount2}</td>
+                  </tr>
+                </tbody>
+              </>
+            );
+          })}
+        </table>
+      </div>
+    </>
+  );
+};
+
+export default Record;
+
+My Code Solution is: 
+
+To correct your code and ensure that the amounts (d.amount1 and d.amount2) are properly summed as numbers (rather than concatenated as strings), you need to ensure the values are treated as numbers before performing the addition.
+The problem:
+The values d.amount1 and d.amount2 are still treated as strings (even though you may be entering them as numbers), and JavaScript will concatenate them when you use the + operator.
+Solution:
+You need to explicitly convert d.amount1 and d.amount2 to numbers using parseFloat() or Number() before adding them together.
+Here’s the corrected version of your Record component:
+
+Corrected Code:
+
+import React from "react";
+import "./Record.css";
+
+const Record = ({ item }) => {
+  return (
+    <div className="Record-container">
+      <table className="record-table">
+        {item.map((d) => {
+          // Ensure amounts are treated as numbers
+          const amount1 = parseFloat(d.amount1) || 0; // Convert to number or default to 0 if invalid
+          const amount2 = parseFloat(d.amount2) || 0; // Convert to number or default to 0 if invalid
+
+          return (
+            <tbody key={d.id} className="record-table-body">
+              <tr className="record-table-head">
+                <th>{d.itemHeading}</th>
+              </tr>
+              <tr>
+                <td>{d.fill1}</td>
+                <td>{amount1}</td>
+              </tr>
+              <tr>
+                <td>{d.fill2}</td>
+                <td>{amount2}</td>
+              </tr>
+              <tr>
+                <td>Total</td>
+                <td>{amount1 + amount2}</td> {/* Sum the amounts correctly */}
+              </tr>
+            </tbody>
+          );
+        })}
+      </table>
+    </div>
+  );
+};
+
+export default Record;
+
+
+Key Changes:
+Explicit Conversion: parseFloat(d.amount1) and parseFloat(d.amount2) are used to convert the amounts into numbers. If the conversion fails (i.e., if the amount is not a valid number), parseFloat will return NaN. The || 0 ensures that in case of NaN, a default value of 0 is used.
+Summing Amounts: In the Total row, instead of directly adding d.amount1 and d.amount2, we now add the converted amount1 and amount2 which are guaranteed to be numbers.
+

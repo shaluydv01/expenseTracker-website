@@ -1,0 +1,40 @@
+1.Open the folder(API) in terminal and write
+---npm init -y
+---npm i express mongoose bcryptjs jsonwebtoken cors
+---npm i -g nodemon     //install nodemon globally
+
+2.Go into the file package.json and make some changes like
+(a).change index.js to server.js
+(b).In script add: 
+---"start": "node server.js"
+(c).Above keyword add:
+"type": "module",
+
+3.Go to google and search "Mongodb atlas", create profile on it, 
+---@shaludducollege@gmail.com
+
+4.Go to Mongodb and create a "New Project", and choose the "Project Name".
+---Create, Go to "free trial"  option.
+---Copy username and password and save it somewhere
+-------UserNAme: user_name
+-------Password: password_
+
+5.Go to "Network Access ", Click on "Edit" and "Allow Access from anywhere".
+6.Go to "Overview" ---> Connect ---> "Choose Compass(Download it if not in your system)" ---> Copy the connection string.
+7.Open the MongodB campus and "Create New Connection" ---> Paste the url and add the "Password" at the password location in the url ---> Give it name ---> "save and connect".
+
+8.Go to "server.js" and add:
+---import mongoose from "mongoose";
+and copy the "Connection String" and add:
+---mongoose.connect("connection_string_url",{
+    dbName: "expenses-Tracker",
+}).then(()=> console.log("MongodB is Connected."));
+
+
+-----------------------Create APIs----------------------
+We have created our "Server", now we will create "APIs"
+
+1.Create a folder name "Models" in "API" folder and create in it:
+---User.js
+
+---Install extension "Thunder Client" in VS Code.
