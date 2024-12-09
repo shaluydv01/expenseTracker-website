@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Record.css";
 
 const Record = ({ item = [] }) => {
+
   return (
     <>
       <div className="Record-container">
@@ -14,6 +15,8 @@ const Record = ({ item = [] }) => {
 
           return (
             <table key={uniqueKey} className="record-table">
+              {/* <p>Date: {d.date1}</p> */}
+              <caption>Date: {d.date1}</caption>
               <thead className="record-table-head">
                 <tr>
                   <th>Items</th>

@@ -2,16 +2,18 @@
 .Record-container{
     display: flex;
     flex-wrap: wrap;
-    gap: 1.2%;
-    box-shadow: 0 5px 15px #333;
+    gap: 2%;
     width: 100%;
 }
 
-.record-table{
+.record-table, td{
     width: 100%;
-    width: 22%;
-    margin: 1%;
-    border: 1px solid black;
+    max-width: 49%;
+}
+
+td{
+    border-bottom: 1px solid black;
+    /* border-collapse: collapse; */
 }
 
 .record-table-head{
@@ -23,8 +25,8 @@
 .record-table-head tr{
     padding: 0.2rem;
     width: 100%;
-    background-color: purple;
-    color: white;
+    /* background-color: purple; */
+    /* color: white; */
     font-size: 16px;
     font-weight: bold;
 }
@@ -32,6 +34,11 @@
 .record-table-head tr th{
     display: flex;
     justify-content: center;
+}
+
+.record-table-head tr{
+    border-bottom: 2px solid black;
+    border-top: 2px solid black;
 }
 
 .record-table-body tr{
@@ -51,8 +58,16 @@
     word-wrap: break-word;
 }
 
+.record-table caption{
+    padding: 0.5vw 2vw;
+    text-align: center;
+    font-weight: 700;
+    margin-top: 2vw;
+    color: #037E89;
+}
+
 #total-amount{
-    background-color: #444;
-    color: white;
-    font-weight: bold;
+    padding: 0;
+    font-weight: 700;
+    font-size: 16px;
 }

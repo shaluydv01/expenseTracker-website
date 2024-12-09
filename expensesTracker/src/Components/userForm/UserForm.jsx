@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./UserForm.css";
 
 const UserForm = ({ item, setItem }) => {
+  const [date1, setDate1] = useState("");
   const [fill1, setFill1] = useState("");
   const [amount1, setAmount1] = useState(""); // Store as string initially
   const [fill2, setFill2] = useState("");
@@ -12,6 +13,7 @@ const UserForm = ({ item, setItem }) => {
 
     const obj = {
       id: Math.random(),
+      date1: date1,
       fill1: fill1,
       amount1: amount1,
       fill2: fill2,
@@ -29,7 +31,17 @@ const UserForm = ({ item, setItem }) => {
       <div className="main-userForm-container">
         <div className="userForm-content-container-1">
           <form onSubmit={handleSubmit}>
-            <div className="ucc-1 box-1">Date</div>
+            <div className="ucc-1 box-1">
+            <legend style={{fontSize: "18px", fontWeight:"700"}}>Choose Date:</legend>
+              <input 
+              type="date"
+              value={date1}
+              name="date"
+              id="date1"
+              onChange={(e) => setDate1(e.target.value)}
+              required
+              />
+            </div>
 
             <div className="ucc-1 box-2">
               <div className="item-box-input">
@@ -94,10 +106,10 @@ const UserForm = ({ item, setItem }) => {
             </div>
 
             <div className="ucc-1 box-5">
-              <button className="btnn btn-add-more">Add More</button>
               <button className="btnn btn-done">Done</button>
             </div>
           </form>
+          <button className="btnn btn-add-more">Add More</button>
         </div>
 
         <div className="userForm-content-container-2">

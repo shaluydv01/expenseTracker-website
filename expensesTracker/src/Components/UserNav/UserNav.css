@@ -1,0 +1,15 @@
+.user-image img{
+    border-radius: 50%;
+}
+
+.main-userNavbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #037E89;
+    padding: 1vw 5vw;
+}
+
+.hello-username{
+    font-size: 24px;
+}

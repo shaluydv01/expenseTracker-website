@@ -1,86 +1,97 @@
-.main-userForm-container{
-    display: flex;
-    justify-content: space-between;
-    gap: 2rem;
-    align-items: center;
-    margin: 4% 0%;
-    box-sizing: border-box;
+.main-userForm-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  align-items: center;
+  margin: 4% 0%;
+  box-sizing: border-box;
 }
 
 /* -----------------Left Container------------------ */
 
-.userForm-content-container-1{
-    width: 50%;
+.userForm-content-container-1 {
+  width: 50%;
 }
 
-.userForm-content-container-1 .ucc-1{
-    display: flex;
-    justify-content: space-between;
-    gap: 1rem;
-    margin-top: 1rem;
+.userForm-content-container-1 .ucc-1 {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1rem;
 }
 
-.ucc-1 .item-box-input, #total-legend{
-    width: 50%;
+.ucc-1 .item-box-input,
+#total-legend {
+  width: 50%;
 }
 
-.ucc-1 .item-box-input input, #total-legend{
-width: 100%;
-margin-top: 0.5rem;
-padding: 1rem 1.5rem;
+.ucc-1 .item-box-input input,
+#total-legend {
+  width: 100%;
+  margin-top: 0.5rem;
+  padding: 1rem 1.5rem;
 }
 
-#total-legend{
-    font-size: 16px;
-    text-align: center;
-    background-color: coral;
-    font-weight: bold;
+#total-legend {
+  font-size: 16px;
+  text-align: center;
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  border-radius: 4px;
 }
 
-.btnn{
-    width: 50%;
-    padding: 0.5rem 0;
-    font-size: 24px;
-    border-radius: 8px;
-    border: none;
-    color: white;
-    font-weight: bold;
+.btnn {
+  width: 100%;
+  padding: 0.5rem 0;
+  font-size: 24px;
+  border-radius: 8px;
+  border: none;
+  color: white;
+  font-weight: bold;
 }
 
-.btn-add-more{
-    background-color: #037E89;
+.btn-add-more {
+  background-color: black;
+  margin-top: 1vw;
 }
 
-.btn-done{
-    background-color: red;
+.btn-done {
+  background-color: black;
 }
 
-.btnn:hover{
-    cursor: pointer;
-    background-color: black;
-    transform: scale(1.05);
+.btnn:hover {
+  cursor: pointer;
+  background-color: #037E89;
+  transform: scale(1.05);
 }
 
+#date1 {
+  width: 50%;
+  padding: 0.5vw;
+  font-size: 2vw;
+  text-align: center;
+}
 
 /* ---------------------Right Container----------------- */
 
-.userForm-content-container-2{
-    width: 50%;
-    border: 2px solid green;
+.userForm-content-container-2 {
+  width: 50%;
+  border: 2px solid green;
 }
 
-.userForm-content-container-2 .userForm-right-table{
-    width: 100%;
-    border: 1px solid red;
+.userForm-content-container-2 .userForm-right-table {
+  width: 100%;
+  border: 1px solid red;
 }
 
-.userForm-content-container-2 .userForm-right-table th{
-    border: 1px solid red;
-    padding: 1rem;
+.userForm-content-container-2 .userForm-right-table th {
+  border: 1px solid red;
+  padding: 1rem;
 }
 
-.userForm-content-container-2 .userForm-right-table td{
-    border: 1px solid black;
-    padding: 0.6rem;
-    text-align: center;
+.userForm-content-container-2 .userForm-right-table td {
+  border: 1px solid black;
+  padding: 0.6rem;
+  text-align: center;
 }
